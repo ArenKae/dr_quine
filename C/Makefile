@@ -35,13 +35,16 @@ all: $(BIN)
 ### RULES ###
 
 clean:
-	rm -f $(BIN)
-	rm -f Sully_*
-	@echo "$(BLUE)C quines cleaned.$(DEF_COLOR)"
+	@rm -f tmp_*
+	@rm -f Sully_*
+	@rm -f Grace_kid.c
+	@echo "$(BLUE)C quines test files removed.$(DEF_COLOR)"
 
 fclean: clean
+	@rm -f $(BIN)
+	@echo "$(RED)C quines binaries removed.$(DEF_COLOR)"
 
-re: clean all
+re: fclean all
 	@echo "$(CYAN)C quines cleaned and rebuilt from scratch.$(DEF_COLOR)"
 
 .PHONY: all clean fclean re
