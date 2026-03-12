@@ -1,0 +1,13 @@
+# call printf wrt ..plt
+Quand on écrit 'extern printf', on indique à NASM que le symbole printf est défini à l'extérieur du programme (dans la libc). NASM ne connaît donc pas son adresse au moment de l'assemblage.
+
+Lorsque NASM rencontre l'instruction call printf, il ajoute dans le fichier objet une entrée de relocalisation. Cette entrée indique au linker (ou éditeur de liens, généralement ld, invoqué par gcc) qu'il devra ajuster cette instruction lorsque l'adresse finale du symbole sera connue.
+
+Sur les systèmes modernes, les compilateurs produisent souvent par défaut des exécutables de type PIE (Position Independent Executable). Un programme PIE moderne est conçu pour pouvoir être chargé à une adresse mémoire variable plutôt qu'à une adresse fixe (mécanisme de sécurité).
+
+Dans ce contexte, un appel direct vers une fonction située dans une bibliothèque dynamique est interdit. Les appels vers ces fonctions doivent passer par un mécanisme intermédiaire appelé PLT (Procedure Linkage Table).
+
+La PLT est une zone de code générée par le linker dans l'exécutable. Elle contient de petits morceaux de code servant d'intermédiaires pour appeler les fonctions provenant de bibliothèques dynamiques comme libc. 
+
+L'écriture call printf wrt ..plt signifie « appeler l'entrée PLT associée à printf ». Cela demande à NASM de générer une relocalisation pointant vers cette entrée PLT plutôt que vers la fonction elle-même. Le linker pourra alors créer correctement l'entrée correspondante dans la PLT et produire un exécutable compatible avec le mécanisme de liaison dynamique utilisé sur les systèmes modernes.
+
