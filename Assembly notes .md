@@ -11,3 +11,8 @@ La PLT est une zone de code générée par le linker dans l'exécutable. Elle co
 
 L'écriture call printf wrt ..plt signifie « appeler l'entrée PLT associée à printf ». Cela demande à NASM de générer une relocalisation pointant vers cette entrée PLT plutôt que vers la fonction elle-même. Le linker pourra alors créer correctement l'entrée correspondante dans la PLT et produire un exécutable compatible avec le mécanisme de liaison dynamique utilisé sur les systèmes modernes.
 
+# section .note.GNU-stack noalloc noexec nowrite progbits
+On définit dans cette section particulière des métadonnées à destination du linker, pour
+spécifier que la stack (pile) dans ce programme n'est pas exécutable. C'est historiquement
+possible en assembleur, mais considéré comme dangereux car cela facilite certaines attaques
+comme les buffer overflows. Ces options permettent donc d'éviter des alertes lors de la compilation.
