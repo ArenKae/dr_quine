@@ -18,15 +18,14 @@ CC := gcc
 ASMFLAGS := -felf64
 CFLAGS := -Wall -Wextra -Werror
 
-SRC := Colleen.s
-OBJ := $(SRC:.s=.o)
+SRC := Colleen.s Grace.s
 NAME := $(basename $(SRC))
 
 ### COMPILATION ###
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+%: %.o
 	$(CC) $(CFLAGS) $< -o $@
 	@echo "$(GREEN)-> $@ compiled!$(DEF_COLOR)"
 
