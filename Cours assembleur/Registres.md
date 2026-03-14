@@ -27,8 +27,7 @@ Contient un pointeur vers le sommet de la stack (pile), c'est à dire
 l'emplacement de la dernière entrée.
 
 # EBP = Base pointer
-Souvent utilisé pour effectuer un "backup" de ESP, afin de capturer le stack frame actuel, pour y faire appel plus tard. Utile pour accéder rapidement
-aux variables locales, agruments de fonction, etc.
+Souvent utilisé pour effectuer un "backup" de ESP, afin de capturer le stack frame actuel, pour y faire appel plus tard. Utile pour accéder rapidement aux variables locales, agruments de fonction, etc.
 
 # ESI = Indice source
 Souvent utilisé comme pointeur source dans les opérations mémoire.
