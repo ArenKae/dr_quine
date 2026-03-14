@@ -20,7 +20,7 @@ msg: db "Hello, World!", 10, 0
 ; Déclare un symbole 'msg' qui contient la chaîne de caractères "Hello, World!" 
 ; suivie d'un saut de ligne (10 en ASCII) et d'un caractère nul (0) pour marquer la fin de la chaîne.
 ; db (define byte) est utilisé pour définir des données de type octet, 
-; mais on peut aussi utiliser dw (define word) pour des données de 2 octets, dd (define double word) pour des données de 4 octets, etc.
+; mais on peut aussi utiliser dq (define quadword) pour définir des données de 8 octets, ou dw (define word) pour 2 octets, etc.
 
 
 section .text	; Section de code exécutable.

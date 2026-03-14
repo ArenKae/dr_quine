@@ -28,6 +28,7 @@ all: $(NAME)
 
 $(NAME): %: %.o
 	$(CC) $(CFLAGS) $< -o $@
+	@rm -f $<
 	@echo "$(GREEN)-> $@ compiled!$(DEF_COLOR)"
 
 %.o: %.s
@@ -50,7 +51,7 @@ clean:
 	@rm -f tmp_*
 	@rm -f Sully_*
 	@rm -f Grace_kid.s
-	@echo "$(BLUE)ASM quines object files removed.$(DEF_COLOR)"
+	@echo "$(BLUE)ASM quines test files removed.$(DEF_COLOR)"
 
 fclean: clean
 	@rm -f $(NAME)
