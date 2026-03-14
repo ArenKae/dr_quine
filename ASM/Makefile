@@ -19,6 +19,7 @@ ASMFLAGS := -felf64
 CFLAGS := -Wall -Wextra -Werror
 
 SRC := Colleen.s Grace.s
+OBJ := $(SRC:.s=.o)
 NAME := $(basename $(SRC))
 
 ### COMPILATION ###
