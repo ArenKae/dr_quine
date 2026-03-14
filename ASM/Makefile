@@ -26,13 +26,14 @@ NAME := $(basename $(SRC))
 
 all: $(NAME)
 
-%: %.o
+$(NAME): %: %.o
 	$(CC) $(CFLAGS) $< -o $@
 	@echo "$(GREEN)-> $@ compiled!$(DEF_COLOR)"
 
 %.o: %.s
 	$(ASM) $(ASMFLAGS) $< -o $@
 	@echo "$(GREEN)-> $@ assembled!$(DEF_COLOR)"
+
 
 ### MEMO ###
 # 	Special variables :
