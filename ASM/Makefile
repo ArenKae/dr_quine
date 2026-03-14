@@ -18,7 +18,7 @@ CC := gcc
 ASMFLAGS := -felf64
 CFLAGS := -Wall -Wextra -Werror
 
-SRC := Colleen.s Grace.s
+SRC := Colleen.s Grace.s Sully.s
 OBJ := $(SRC:.s=.o)
 NAME := $(basename $(SRC))
 

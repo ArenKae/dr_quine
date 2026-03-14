@@ -43,17 +43,17 @@ main:
     lea rdi, [fname] ; rdi doit contenir le premier argument de fopen, qui est le nom du fichier à ouvrir.
     lea rsi, [mode]	; rsi doit contenir le deuxième argument de fopen, qui est le mode d'ouverture du fichier ('w' pour write).
     call fopen wrt ..plt
-	; rax contient le résultat de fopen : un pointeur de fichier valide si l'ouverture a réussi, ou NULL (0) si elle a échoué.
+	; rax contient le résultat de fopen : un pointeur de fichier valide si l'ouverture a réussi, ou NULL si elle a échoué.
 	; On test si rax vaut 0 en faisant un AND binaire de rax avec lui-même : si rax est 0, le résultat sera 0, sinon il sera non nul.
     test rax, rax
 	; (jz = jump if zero) Si rax est 0, on saute à l'étiquette fail pour gérer l'erreur.
-	; %% est utilisé pour définir une étiquette locale à la macro. En dehors de la macro, on écrirait simplement '.fail'
+	; %% est utilisé pour définir une étiquette locale à la macro. En dehors d'une macro, on écrirait simplement '.fail'
 	; Une étiquette locale n'est pas un symbole global ou une routine distincte, elle est uniquement visible à l'intérieur 
 	; de la précédente étiquette à laquelle elle est associée (ici, main). On les utilise typiquement pour les sauts 
 	; conditionnels ou les boucles à l'intérieur d'une fonction.
     jz %%fail
 	; Si rax n'est pas 0, il contient un pointeur de fichier valide. 
-	; On le sauvegarde dans la stack frame avec [rbp-8] pour pouvoir y accéder plus tard.
+	; On le sauvegarde dans la stack frame à l'adressse [rbp-8] pour pouvoir y accéder plus tard.
     mov [rbp-8], rax
 
 	; FPRINTF
