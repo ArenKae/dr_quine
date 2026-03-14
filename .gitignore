@@ -22,7 +22,7 @@ Grace
 Sully
 Sully_*
 tmp_*
-Grace_kid.c
+Grace_kid.*
 
 # MEMO : delete folder from remote :
 # git rm -r --cached folder_name
