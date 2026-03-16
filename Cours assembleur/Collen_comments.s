@@ -10,6 +10,8 @@ section .data
 section .text
 ; outside comment
 main:
+	; Alignement de la stack (elle doit etre alignée sur 16 bits, l'appel d'une fonction comme printf en pousse 8 pour stocker la valeur de retour, 8+8=16)
+	sub rsp, 8
 	; On prépare les arguments pour fprintf
     lea rdi, [fmt]
     lea rsi, [src]
@@ -19,6 +21,7 @@ main:
     xor eax, eax ; On met eax à 0 pour indiquer à printf qu'on a fini de charger les arguments dans les registres.
 	; C'est une convention d'appel pour les fonctions variadiques comme printf.
     call printf wrt ..plt
+	add rsp, 8	; Rétablit la stack d'origine
     xor eax, eax
     ret
 
