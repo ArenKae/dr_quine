@@ -1,7 +1,7 @@
 # Dr_Quine
 
 <p align="center">
-  <img src="hhttps://github.com/ArenKae/ArenKae/blob/main/42%20badges/dr_quine.png" alt="dr-quine badge"/>
+  <img src="https://github.com/ArenKae/ArenKae/blob/main/42%20badges/dr_quine.png" alt="dr-quine badge"/>
 </p>
 
 ## An introduction to self-replicating programs
