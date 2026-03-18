@@ -35,7 +35,7 @@ There should be no difference between the source file and the generated Grace_ki
 Run ```./Sully``` to launch the program and generate files. You can then compare them with ```diff Sully.c Sully_X.c```. Starting from X = 4, the only difference should be the value of the integer i used to decrement the files after each iteration.
 
 > [!NOTE]
-> For assembly, the steps are the same—just replace the file names with the corresponding .s equivalent.
+> For assembly, the steps are the same : just replace the file names with the corresponding .s equivalent.
 > 
 > For Python, no compilation is required. Simply run ```python3 file_name``` to launch the program, then test with diff as usual.
 > 
