@@ -43,3 +43,7 @@ Run ```./Sully``` to launch the program and generate files. You can then compare
 > ```
 > sudo apt install python3
 > ```
+For assembly, the steps are the same : just replace the file names with the corresponding .s equivalent.
+
+> [!NOTE]
+For Python, no compilation is required. Simply run ```python3 file_name``` to launch the program, then test with diff as usual.
