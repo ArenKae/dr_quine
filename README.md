@@ -5,7 +5,7 @@
 </p>
 
 ## An introduction to self-replicating programs
-A quine is a computer program that takes no input and produces a copy of its own source code as its only output. Writing a quine confronts the programmer with the principle of self-reproduction and the problems that derive from it (see Kleene's recursion theorem). While they have little purpose in the real world, they often serve as an introduction to more complex replication problems, particularly malwares.
+A quine is a computer program that takes no input and produces a copy of its own source code as its only output. Writing a quine confronts the programmer with the principle of self-reproduction and the problems that derive from it ([see Kleene's recursion theorem](https://en.wikipedia.org/wiki/Kleene%27s_recursion_theorem)). While they have little purpose in the real world, they often serve as an introduction to more complex replication problems, particularly malwares.
 
 For this project, we'll work on 3 different quine variations, implemented in C, x86-64 assembly, and Python for the bonus part. Since this is my first assembly project, you will also find some notes providing detailed comments about the exercises and explaining essential notions and syntax to understand this language. The notes are written in french in the '# Cours assembleur' directory.
 
